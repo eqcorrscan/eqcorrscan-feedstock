@@ -1,6 +1,6 @@
 {% set name = "EQcorrscan" %}
-{% set version = "0.2.5" %}
-{% set sha256 = "05ebcdd4023ab038ff1242d8bb49d475f3c3a49b43b5d8a882a6d0dc311bd4f1" %}
+{% set version = "0.2.6" %}
+{% set sha256 = "ea6b2bd03563f96810511b2839e3d2490d8abebce8baa5cb072726a99d338290" %}
 
 package:
   name: {{ name|lower }}
