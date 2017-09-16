@@ -3,7 +3,7 @@ import time
 
 from obspy import Trace, Stream
 
-from eqcorrscan.utils.correlate import multichannel_normxcorr
+from eqcorrscan.utils.correlate import get_stream_xcorr
 
 
 def test_multi_channel_xcorr():
@@ -29,40 +29,49 @@ def test_multi_channel_xcorr():
         templates.append(template)
     print("Running time serial")
     tic = time.time()
+    multichannel_normxcorr = get_stream_xcorr(
+        "time_domain", concurrency=None)
     cccsums_t_s, no_chans, chans = multichannel_normxcorr(
-        templates=templates, stream=stream, cores=None, time_domain=True)
+        templates=templates, stream=stream)
     toc = time.time()
     print('Time-domain in serial took: %f seconds' % (toc-tic))
     print("Running time parallel")
     tic = time.time()
+    multichannel_normxcorr = get_stream_xcorr(
+        "time_domain", concurrency="multiprocess")
     cccsums_t_p, no_chans, chans = multichannel_normxcorr(
-        templates=templates, stream=stream, cores=4, time_domain=True)
+        templates=templates, stream=stream, cores=4)
     toc = time.time()
     print('Time-domain in parallel took: %f seconds' % (toc-tic))
     print("Running frequency serial")
     tic = time.time()
+    multichannel_normxcorr = get_stream_xcorr(
+        "fftw", concurrency=None)
     cccsums_f_s, no_chans, chans = multichannel_normxcorr(
-        templates=templates, stream=stream, cores=None, time_domain=False)
+        templates=templates, stream=stream)
     toc = time.time()
     print('Frequency-domain in serial took: %f seconds' % (toc-tic))
     print("Running frequency parallel")
     tic = time.time()
+    multichannel_normxcorr = get_stream_xcorr(
+        "fftw", concurrency="multiprocess")
     cccsums_f_p, no_chans, chans = multichannel_normxcorr(
-        templates=templates, stream=stream, cores=4, time_domain=False)
+        templates=templates, stream=stream, cores=4)
     toc = time.time()
     print('Frequency-domain in parallel took: %f seconds' % (toc-tic))
     print("Running frequency openmp parallel")
     tic = time.time()
+    multichannel_normxcorr = get_stream_xcorr(
+        "fftw", concurrency="concurrent")
     cccsums_f_op, no_chans, chans = multichannel_normxcorr(
-        templates=templates, stream=stream, cores=2, time_domain=False,
-        openmp=True)
+        templates=templates, stream=stream)
     toc = time.time()
     print('Frequency-domain in parallel took: %f seconds' % (toc-tic))
     print("Finished")
     assert(np.allclose(cccsums_t_s, cccsums_t_p, atol=0.00001))
     assert(np.allclose(cccsums_f_s, cccsums_f_p, atol=0.00001))
     assert(np.allclose(cccsums_f_s, cccsums_f_op, atol=0.00001))
-    assert(np.allclose(cccsums_t_p, cccsums_f_s, atol=0.7))
+    assert(np.allclose(cccsums_t_p, cccsums_f_s, atol=0.001))
 
 
 if __name__ == '__main__':
