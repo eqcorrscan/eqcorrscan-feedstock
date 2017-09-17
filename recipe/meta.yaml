@@ -1,5 +1,5 @@
 {% set name = "EQcorrscan" %}
-{% set version = "0.2.6" %}
+{% set version = "0.2.7" %}
 {% set sha256 = "ea6b2bd03563f96810511b2839e3d2490d8abebce8baa5cb072726a99d338290" %}
 
 package:
@@ -12,8 +12,8 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  skip: true  # [win]
-  number: 2
+  skip: false
+  number: 0
 
 requirements:
   build:
