@@ -12,8 +12,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  skip: false
-  number: 0
+  number: 1
 
 requirements:
   build:
@@ -23,14 +22,12 @@ requirements:
     - future
     - numpy x.x
     - fftw
-    - openmp
   run:
     - python
     - setuptools
     - future
     - numpy x.x
     - fftw
-    - openmp
     - scipy
     - matplotlib
     - obspy
