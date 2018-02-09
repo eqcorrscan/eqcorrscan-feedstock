@@ -20,7 +20,7 @@ requirements:
     - setuptools
     - toolchain
     - future
-    - numpy 1.11
+    - numpy 1.11.*
     - fftw
   run:
     - python
