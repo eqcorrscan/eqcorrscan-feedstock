@@ -20,13 +20,13 @@ requirements:
     - setuptools
     - toolchain
     - future
-    - numpy x.x
+    - numpy 1.11
     - fftw
   run:
     - python
     - setuptools
     - future
-    - numpy x.x
+    - numpy >=1.11
     - fftw
     - scipy
     - matplotlib
