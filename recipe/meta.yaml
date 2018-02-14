@@ -22,6 +22,9 @@ requirements:
     - future
     - numpy 1.11.*
     - fftw
+    - clangdev 4.*   # [osx]
+    - openmp 4.*     # [osx]
+    - libcxx 4.*     # [osx]
   run:
     - python
     - setuptools
@@ -34,6 +37,8 @@ requirements:
     - bottleneck
     - pyproj
     - fftw
+    - openmp >=4     # [osx]
+    - libcxx >=4     # [osx]
 
 about:
   home: https://eqcorrscan.github.io
