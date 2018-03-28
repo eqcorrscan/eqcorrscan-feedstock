@@ -12,8 +12,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  skip: false
-  number: 0
+  number: 1
 
 requirements:
   build:
@@ -21,22 +20,25 @@ requirements:
     - setuptools
     - toolchain
     - future
-    - numpy x.x
+    - numpy 1.11.*
     - fftw
-    - openmp
+    - clangdev 4.*   # [osx]
+    - openmp 4.*     # [osx]
+    - libcxx 4.*     # [osx]
   run:
     - python
     - setuptools
     - future
-    - numpy x.x
+    - numpy >=1.11
     - fftw
-    - openmp
     - scipy
     - matplotlib
     - obspy
     - bottleneck
     - pyproj
     - fftw
+    - openmp >=4     # [osx]
+    - libcxx >=4     # [osx]
 
 about:
   home: https://eqcorrscan.github.io
