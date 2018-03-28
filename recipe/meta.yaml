@@ -39,6 +39,7 @@ requirements:
     - bottleneck
     - pyproj
     - fftw
+    - h5py
     - openmp >=4     # [osx]
     - libcxx >=4     # [osx]
 
