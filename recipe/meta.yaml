@@ -11,7 +11,7 @@ source:
   # url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   # sha256: {{ sha256 }}
   fn: 0.3.0rc0.tar.gz
-  url: https://github.com/eqcorrscan/EQcorrscan/archive/0.3.0rc0.tar.gz
+  url: https://github.com/eqcorrscan/EQcorrscan/archive/0.3.0rc1.tar.gz
 
 build:
   number: 1
