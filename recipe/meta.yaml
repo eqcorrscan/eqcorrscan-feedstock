@@ -1,6 +1,6 @@
 {% set name = "EQcorrscan" %}
 {% set version = "0.3.0" %}
-{% set sha256 = "e64c3e81c03a14be11a233c8df925367a55e52108ef01de315b28809b0eed08a" %}
+{% set sha256 = "71d4a8ddde869ac076a68718a445187aa5cb7ee9eb851e01e8686e1fbb959d98" %}
 
 package:
   name: {{ name|lower }}
@@ -14,7 +14,7 @@ source:
   # url: https://github.com/eqcorrscan/EQcorrscan/archive/0.3.0rc1.tar.gz
 
 build:
-  number: 1
+  number: 2
 
 requirements:
   build:
