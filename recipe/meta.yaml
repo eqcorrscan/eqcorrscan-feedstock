@@ -18,11 +18,12 @@ build:
 
 requirements:
   build:
+    - {{ compiler('c') }}
+  host:
     - python
     - setuptools
-    - toolchain
     - future
-    - numpy 1.11.*
+    - numpy
     - fftw
     - clangdev 4.*   # [osx]
     - openmp 4.*     # [osx]
@@ -31,7 +32,7 @@ requirements:
     - python
     - setuptools
     - future
-    - numpy >=1.11
+    - {{ pin_compatible('numpy') }}
     - fftw
     - scipy
     - matplotlib
