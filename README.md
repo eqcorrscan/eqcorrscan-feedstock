@@ -16,14 +16,16 @@ and near-repeating earthquakes.
 Current build status
 ====================
 
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/eqcorrscan-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/eqcorrscan-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/eqcorrscan-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/eqcorrscan-feedstock)
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/eqcorrscan-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/eqcorrscan-feedstock/branch/master)
+[![Linux](https://img.shields.io/circleci/project/github/conda-forge/eqcorrscan-feedstock/master.svg?label=Linux)](https://circleci.com/gh/conda-forge/eqcorrscan-feedstock)
+[![OSX](https://img.shields.io/travis/conda-forge/eqcorrscan-feedstock/master.svg?label=macOS)](https://travis-ci.org/conda-forge/eqcorrscan-feedstock)
+[![Windows](https://img.shields.io/appveyor/ci/conda-forge/eqcorrscan-feedstock/master.svg?label=Windows)](https://ci.appveyor.com/project/conda-forge/eqcorrscan-feedstock/branch/master)
 
 Current release info
 ====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/eqcorrscan/badges/version.svg)](https://anaconda.org/conda-forge/eqcorrscan)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/eqcorrscan/badges/downloads.svg)](https://anaconda.org/conda-forge/eqcorrscan)
+
+| Name | Downloads | Version | Platforms |
+| --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-eqcorrscan-green.svg)](https://anaconda.org/conda-forge/eqcorrscan) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/eqcorrscan.svg)](https://anaconda.org/conda-forge/eqcorrscan) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/eqcorrscan.svg)](https://anaconda.org/conda-forge/eqcorrscan) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/eqcorrscan.svg)](https://anaconda.org/conda-forge/eqcorrscan) |
 
 Installing eqcorrscan
 =====================
