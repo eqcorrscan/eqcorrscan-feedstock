@@ -79,7 +79,7 @@ def test_multi_channel_xcorr():
     assert(np.allclose(cccsums_t_s, cccsums_t_p, atol=0.00001))
     assert(np.allclose(cccsums_f_s, cccsums_f_p, atol=0.00001))
     assert(np.allclose(cccsums_f_s, cccsums_f_op, atol=0.00001))
-    assert(np.allclose(cccsums_f_s, cccsums_f_op_outer, atol=0.00001))
+    assert(np.allclose(cccsums_f_s, cccsums_f_outer_op, atol=0.00001))
     assert(np.allclose(cccsums_t_p, cccsums_f_s, atol=0.001))
 
 
