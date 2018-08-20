@@ -1,20 +1,20 @@
 {% set name = "EQcorrscan" %}
-{% set version = "0.3.2rc0" %}
-{% set sha256 = "974fb11a8fa57f9c9767fb95d3db494ef1816768847e29278b144e81980fd0b6" %}
+{% set version = "0.3.2" %}
+{% set sha256 = "43b082e3190958fc5110c5d3db15c80cf441d05328c82758ff3cf41b52a722ad" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  # fn: {{ name }}-{{ version }}.tar.gz
-  # url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  # sha256: {{ sha256 }}
-  fn: 0.3.3rc0.tar.gz
-  url: https://github.com/eqcorrscan/EQcorrscan/archive/0.3.2rc0.tar.gz
+   fn: {{ name }}-{{ version }}.tar.gz
+   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+   sha256: {{ sha256 }}
+#  fn: 0.3.3rc0.tar.gz
+#  url: https://github.com/eqcorrscan/EQcorrscan/archive/0.3.2rc0.tar.gz
 
 build:
-  number: 1
+  number: 0
 
 requirements:
   build:
@@ -45,7 +45,7 @@ requirements:
     - libcxx >=4     # [osx]
 
 about:
-  home: https://eqcorrscan.github.io
+  home: http://eqcorrscan.readthedocs.io/
   license: LGPLv3
   license_file: LICENCE.txt
   summary: 'Detection and analysis of repeating and near-repeating earthquakes'
