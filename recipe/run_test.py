@@ -64,13 +64,22 @@ def test_multi_channel_xcorr():
     multichannel_normxcorr = get_stream_xcorr(
         "fftw", concurrency="concurrent")
     cccsums_f_op, no_chans, chans = multichannel_normxcorr(
-        templates=templates, stream=stream)
+        templates=templates, stream=stream, cores=4)
+    toc = time.time()
+    print('Frequency-domain in parallel took: %f seconds' % (toc-tic))
+    print("Running frequency openmp parallel outer")
+    tic = time.time()
+    multichannel_normxcorr = get_stream_xcorr(
+        "fftw", concurrency="concurrent")
+    cccsums_f_outer_op, no_chans, chans = multichannel_normxcorr(
+        templates=templates, stream=stream, cores=1, cores_outer=4)
     toc = time.time()
     print('Frequency-domain in parallel took: %f seconds' % (toc-tic))
     print("Finished")
     assert(np.allclose(cccsums_t_s, cccsums_t_p, atol=0.00001))
     assert(np.allclose(cccsums_f_s, cccsums_f_p, atol=0.00001))
     assert(np.allclose(cccsums_f_s, cccsums_f_op, atol=0.00001))
+    assert(np.allclose(cccsums_f_s, cccsums_f_outer_op, atol=0.00001))
     assert(np.allclose(cccsums_t_p, cccsums_f_s, atol=0.001))
 
 
