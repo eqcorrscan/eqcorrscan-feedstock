@@ -1,7 +1,7 @@
 About eqcorrscan
 ================
 
-Home: https://eqcorrscan.github.io
+Home: http://eqcorrscan.readthedocs.io/
 
 Package license: LGPLv3
 
