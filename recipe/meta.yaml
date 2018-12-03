@@ -1,5 +1,5 @@
 {% set name = "EQcorrscan" %}
-{% set version = "0.3.2" %}
+{% set version = "0.3.3rc0" %}
 {% set sha256 = "43b082e3190958fc5110c5d3db15c80cf441d05328c82758ff3cf41b52a722ad" %}
 
 package:
@@ -7,14 +7,14 @@ package:
   version: {{ version }}
 
 source:
-   fn: {{ name }}-{{ version }}.tar.gz
-   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-   sha256: {{ sha256 }}
-#  fn: 0.3.3rc0.tar.gz
-#  url: https://github.com/eqcorrscan/EQcorrscan/archive/0.3.2rc0.tar.gz
+#   fn: {{ name }}-{{ version }}.tar.gz
+#   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+#   sha256: {{ sha256 }}
+  fn: 0.3.3rc0.tar.gz
+  url: https://github.com/eqcorrscan/EQcorrscan/archive/0.3.3rc0.tar.gz
 
 build:
-  number: 1
+  number: 0
 
 requirements:
   build:
