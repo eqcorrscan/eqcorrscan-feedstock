@@ -14,7 +14,7 @@ source:
 #  url: https://github.com/eqcorrscan/EQcorrscan/archive/0.3.3rc0.tar.gz
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   build:
