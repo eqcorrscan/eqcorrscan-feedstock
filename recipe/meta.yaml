@@ -15,12 +15,11 @@ source:
 
 build:
   skip: True  # [py2k]
-  number: 1
+  number: 2
 
 requirements:
   build:
     - {{ compiler('c') }}
-    - llvm-openmp  # [osx]
   host:
     - python
     - setuptools
@@ -30,7 +29,6 @@ requirements:
     - clangdev 4.*   # [osx]
     - openmp 4.*     # [osx]
     - libcxx 4.*     # [osx]
-    - llvm-openmp  # [osx]
   run:
     - python
     - setuptools
@@ -47,7 +45,6 @@ requirements:
     - h5py
     - openmp >=4     # [osx]
     - libcxx >=4     # [osx]
-    - llvm-openmp  # [osx]
 
 about:
   home: http://eqcorrscan.readthedocs.io/
