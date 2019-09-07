@@ -14,11 +14,13 @@ source:
   url: https://github.com/eqcorrscan/EQcorrscan/archive/0.4.0rc0.tar.gz
 
 build:
-  number: 0
+  skip: True  # [py2k]
+  number: 1
 
 requirements:
   build:
     - {{ compiler('c') }}
+    - llvm-openmp  # [osx]
   host:
     - python
     - setuptools
@@ -28,6 +30,7 @@ requirements:
     - clangdev 4.*   # [osx]
     - openmp 4.*     # [osx]
     - libcxx 4.*     # [osx]
+    - llvm-openmp  # [osx]
   run:
     - python
     - setuptools
@@ -44,6 +47,7 @@ requirements:
     - h5py
     - openmp >=4     # [osx]
     - libcxx >=4     # [osx]
+    - llvm-openmp  # [osx]
 
 about:
   home: http://eqcorrscan.readthedocs.io/
