@@ -15,7 +15,7 @@ source:
 
 build:
   skip: True  # [py2k]
-  number: 0
+  number: 1
 
 requirements:
   build:
@@ -36,7 +36,7 @@ requirements:
     - {{ pin_compatible('numpy') }}
     - fftw
     - scipy
-    - matplotlib
+    - matplotlib-base
     - obspy
     - bottleneck
     - pyproj
