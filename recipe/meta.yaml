@@ -48,7 +48,7 @@ requirements:
 
 about:
   home: http://eqcorrscan.readthedocs.io/
-  license: LGPLv3
+  license: LGPL-3.0-or-later
   license_file: LICENCE.txt
   summary: 'Detection and analysis of repeating and near-repeating earthquakes'
   description: |
