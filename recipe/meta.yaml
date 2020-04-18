@@ -15,7 +15,7 @@ source:
 
 build:
   skip: True  # [py2k]
-  number: 0
+  number: 1
 
 requirements:
   build:
@@ -26,9 +26,7 @@ requirements:
     - future
     - numpy
     - fftw
-    - clangdev 4.*   # [osx]
-    - openmp 4.*     # [osx]
-    - libcxx 4.*     # [osx]
+    - llvm-openmp >=4.0.1  # [osx]
   run:
     - python
     - setuptools
@@ -43,8 +41,7 @@ requirements:
     - fftw
     - pyfftw
     - h5py
-    - openmp >=4     # [osx]
-    - libcxx >=4     # [osx]
+    - llvm-openmp >=4.0.1  # [osx]
 
 about:
   home: http://eqcorrscan.readthedocs.io/
