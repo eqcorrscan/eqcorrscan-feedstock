@@ -1,6 +1,6 @@
 {% set name = "EQcorrscan" %}
-{% set version = "0.4.0" %}
-{% set sha256 = "8957e7373b5998f108af57406ebcf06358f6da24ca2c402bee38433c4d044511" %}
+{% set version = "0.4.1" %}
+{% set sha256 = "e020a476b430ab373ff71c1728d643137075a354602f9bac94718c3b8c8bc1a8" %}
 
 package:
   name: {{ name|lower }}
@@ -10,12 +10,12 @@ source:
    fn: {{ name }}-{{ version }}.tar.gz
    url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
    sha256: {{ sha256 }}
-  # fn: 0.4.0rc0.tar.gz
-  # url: https://github.com/eqcorrscan/EQcorrscan/archive/0.4.0rc0.tar.gz
+  # fn: 0.4.1rc0.tar.gz
+  # url: https://github.com/eqcorrscan/EQcorrscan/archive/0.4.1rc0.tar.gz
 
 build:
   skip: True  # [py2k]
-  number: 1
+  number: 0
 
 requirements:
   build:
@@ -26,9 +26,7 @@ requirements:
     - future
     - numpy
     - fftw
-    - clangdev 4.*   # [osx]
-    - openmp 4.*     # [osx]
-    - libcxx 4.*     # [osx]
+    - llvm-openmp >=4.0.1  # [osx]
   run:
     - python
     - setuptools
@@ -43,12 +41,11 @@ requirements:
     - fftw
     - pyfftw
     - h5py
-    - openmp >=4     # [osx]
-    - libcxx >=4     # [osx]
+    - llvm-openmp >=4.0.1  # [osx]
 
 about:
   home: http://eqcorrscan.readthedocs.io/
-  license: LGPLv3
+  license: LGPL-3.0-or-later
   license_file: LICENCE.txt
   summary: 'Detection and analysis of repeating and near-repeating earthquakes'
   description: |
