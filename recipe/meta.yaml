@@ -38,7 +38,6 @@ requirements:
     - obspy
     - bottleneck
     - pyproj
-    - fftw
     - pyfftw
     - h5py
     - llvm-openmp >=4.0.1  # [osx]
