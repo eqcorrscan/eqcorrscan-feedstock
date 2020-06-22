@@ -1,12 +1,14 @@
 import numpy as np
 import time
+import os
+import glob
 
 from obspy import Trace, Stream
 
-from eqcorrscan.utils.correlate import get_stream_xcorr
-
 
 def test_multi_channel_xcorr():
+    from eqcorrscan.utils.correlate import get_stream_xcorr
+
     chans = ['EHZ', 'EHN', 'EHE']
     stas = ['COVA', 'FOZ', 'LARB', 'GOVA', 'MTFO', 'MTBA']
     n_templates = 20
@@ -83,8 +85,25 @@ def test_multi_channel_xcorr():
     assert(np.allclose(cccsums_t_p, cccsums_f_s, atol=0.001))
 
 
+def check_c_locations():
+    from eqcorrscan.utils import libnames
+
+    libdir = os.path.join(os.path.dirname(libnames.__file__), 'lib')
+    lib_files = glob.glob(os.path.join(libdir, "*"))
+    print(f"Found the following files in the Library: {lib_files}")
+
+    libname = libnames._get_lib_name("libutils")
+    libpath = os.path.join(libdir, libname)
+    static_fftw = os.path.join(libdir, 'libfftw3-3.dll')
+    static_fftwf = os.path.join(libdir, 'libfftw3f-3.dll')
+    print(f"Expected libutils here: {libpath}")
+    print(f"Expected static fftw here: {static_fftw}")
+    print(f"Expected static fftwf here: {static_fftwf}")
+
+
 if __name__ == '__main__':
     """
     Run core tests
     """
+    check_c_locations()
     test_multi_channel_xcorr()
