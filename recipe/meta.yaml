@@ -14,8 +14,8 @@ source:
   # url: https://github.com/eqcorrscan/EQcorrscan/archive/0.4.1rc0.tar.gz
 
 build:
-  skip: True  # [py2k]
-  number: 0
+  skip: true  # [win and py > 37]
+  number: 1
 
 requirements:
   build:
@@ -38,7 +38,6 @@ requirements:
     - obspy
     - bottleneck
     - pyproj
-    - fftw
     - pyfftw
     - h5py
     - llvm-openmp >=4.0.1  # [osx]
