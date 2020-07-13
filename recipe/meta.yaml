@@ -1,17 +1,17 @@
 {% set name = "EQcorrscan" %}
 {% set version = "0.4.2" %}
-{% set sha256 = "e020a476b430ab373ff71c1728d643137075a354602f9bac94718c3b8c8bc1a8" %}
+{% set sha256 = "28bebfc2923fb90197df8ed647d686ba2b138b8a95d636832d72beee24a6c00d" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  #  fn: {{ name }}-{{ version }}.tar.gz
-  #  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  #  sha256: {{ sha256 }}
-  fn: 0.4.2rc0.tar.gz
-  url: https://github.com/eqcorrscan/EQcorrscan/archive/0.4.2rc0.tar.gz
+   fn: {{ name }}-{{ version }}.tar.gz
+   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+   sha256: {{ sha256 }}
+  # fn: 0.4.2rc0.tar.gz
+  # url: https://github.com/eqcorrscan/EQcorrscan/archive/0.4.2rc0.tar.gz
 
 build:
   skip: true  # [win and py > 37]
