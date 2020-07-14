@@ -7,9 +7,9 @@ package:
   version: {{ version }}
 
 source:
-   fn: {{ name }}-{{ version }}.tar.gz
-   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-   sha256: {{ sha256 }}
+  fn: {{ name }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: {{ sha256 }}
   # fn: 0.4.2rc0.tar.gz
   # url: https://github.com/eqcorrscan/EQcorrscan/archive/0.4.2rc0.tar.gz
 
@@ -46,7 +46,7 @@ about:
   home: http://eqcorrscan.readthedocs.io/
   license: LGPL-3.0-or-later
   license_file: LICENCE.txt
-  summary: 'Detection and analysis of repeating and near-repeating earthquakes'
+  summary: Detection and analysis of repeating and near-repeating earthquakes
   description: |
     EQcorrscan is a Python package for detection and analysis of repeating
     and near-repeating earthquakes.
