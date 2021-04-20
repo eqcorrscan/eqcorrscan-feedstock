@@ -46,7 +46,7 @@ about:
   home: http://eqcorrscan.readthedocs.io/
   license: LGPL-3.0-or-later
   license_file: LICENCE.txt
-  summary: 'Detection and analysis of repeating and near-repeating earthquakes'
+  summary: Detection and analysis of repeating and near-repeating earthquakes
   description: |
     EQcorrscan is a Python package for detection and analysis of repeating
     and near-repeating earthquakes.

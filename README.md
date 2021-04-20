@@ -5,7 +5,7 @@ Home: http://eqcorrscan.readthedocs.io/
 
 Package license: LGPL-3.0-or-later
 
-Feedstock license: BSD 3-Clause
+Feedstock license: BSD-3-Clause
 
 Summary: Detection and analysis of repeating and near-repeating earthquakes
 
@@ -84,13 +84,6 @@ Current build status
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5884&branchName=master">
                   <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/eqcorrscan-feedstock?branchName=master&jobName=win&configuration=win_python3.7.____cpython" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>win_python3.8.____cpython</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5884&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/eqcorrscan-feedstock?branchName=master&jobName=win&configuration=win_python3.8.____cpython" alt="variant">
                 </a>
               </td>
             </tr>
