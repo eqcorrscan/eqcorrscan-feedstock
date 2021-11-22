@@ -14,8 +14,8 @@ source:
   # url: https://github.com/eqcorrscan/EQcorrscan/archive/0.4.3rc0.tar.gz
 
 build:
-  # skip: true  # [win and py > 37]
-  number: 2
+  skip: true  # [win and py==38]
+  number: 3
 
 requirements:
   build:
