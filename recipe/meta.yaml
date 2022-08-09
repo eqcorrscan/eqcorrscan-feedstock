@@ -1,5 +1,5 @@
 {% set name = "EQcorrscan" %}
-{% set version = "0.4.3" %}
+{% set version = "0.4.4" %}
 {% set sha256 = "f8d783bdce30f0f40942fadc7a78f66434332f7a1347c0c2ffc50345a27bd607" %}
 
 package:
@@ -7,15 +7,15 @@ package:
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: {{ sha256 }}
-  # fn: 0.4.3rc0.tar.gz
-  # url: https://github.com/eqcorrscan/EQcorrscan/archive/0.4.3rc0.tar.gz
+  #  fn: {{ name }}-{{ version }}.tar.gz
+  #  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  #  sha256: {{ sha256 }}
+   fn: 0.4.4rc0.tar.gz
+   url: https://github.com/eqcorrscan/EQcorrscan/archive/0.4.4rc0.tar.gz
 
 build:
   skip: true  # [win and py==38]
-  number: 3
+  number: 0
 
 
 requirements:
@@ -34,7 +34,7 @@ requirements:
     - future
     - {{ pin_compatible('numpy') }}
     - fftw
-    - scipy
+    - scipy >=0.18, <1.9.0
     - matplotlib-base
     - obspy
     - bottleneck
