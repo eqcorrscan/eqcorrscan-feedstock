@@ -34,12 +34,12 @@ requirements:
     - future
     - {{ pin_compatible('numpy') }}
     - fftw
-    - scipy >=0.18, <1.9.0
+    - scipy <1.9.0
     - matplotlib-base
     - obspy
     - bottleneck
     - pyproj
-    - pyfftw
+    - pyfftw <=0.12
     - h5py
     - llvm-openmp >=4.0.1  # [osx]
 
