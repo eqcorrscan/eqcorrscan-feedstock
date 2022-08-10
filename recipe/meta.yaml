@@ -27,6 +27,7 @@ requirements:
     - future
     - numpy
     - fftw
+    - pyfftw
     - llvm-openmp >=4.0.1  # [osx]
   run:
     - python
@@ -39,7 +40,7 @@ requirements:
     - obspy
     - bottleneck
     - pyproj
-    - pyfftw <=0.12
+    - pyfftw
     - h5py
     - llvm-openmp >=4.0.1  # [osx]
 
