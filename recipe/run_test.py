@@ -109,6 +109,7 @@ def check_c_locations():
 
     
 def test_pyfftw_resample():
+    """ Check that pyfftw works properly with our fftw libs. """"
     import io
     from contextlib import redirect_stdout
     from eqcorrscan.utils.pre_processing import _resample
@@ -121,6 +122,11 @@ def test_pyfftw_resample():
         # If linking not done properly then this will output a traceback to stdout
         tr_resampled = _resample(tr, 50, threads=2)
     assert f.getvalue() == ''
+    
+def test_obspy_resample():
+    """ Check that obspy resample works - scipy hanning to hann name change. """
+    tr = Trace(np.random.randn(360000))
+    tr.resample(50)
     
 
 if __name__ == '__main__':
