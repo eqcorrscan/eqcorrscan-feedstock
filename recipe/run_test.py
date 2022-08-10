@@ -119,7 +119,7 @@ def test_pyfftw_resample():
     f = io.StringIO()
     with redirect_stdout(f):
         # If linking not done properly then this will output a traceback to stdout
-        tr_resampled = _resample(tr, 50, n_threads=2)
+        tr_resampled = _resample(tr, 50, threads=2)
     assert f.getvalue() == ''
     
 
