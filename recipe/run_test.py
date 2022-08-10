@@ -109,7 +109,7 @@ def check_c_locations():
 
     
 def test_pyfftw_resample():
-    """ Check that pyfftw works properly with our fftw libs. """"
+    """ Check that pyfftw works properly with our fftw libs. """
     import io
     from contextlib import redirect_stdout
     from eqcorrscan.utils.pre_processing import _resample
