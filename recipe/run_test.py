@@ -136,3 +136,4 @@ if __name__ == '__main__':
     check_c_locations()
     test_multi_channel_xcorr()
     test_pyfftw_resample()
+    test_obspy_resample()
