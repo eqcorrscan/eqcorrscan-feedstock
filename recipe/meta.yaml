@@ -27,20 +27,20 @@ requirements:
     - future
     - numpy
     - fftw
-    - pyfftw
+    - pyfftw ==0.12
     - llvm-openmp >=4.0.1  # [osx]
   run:
     - python
     - setuptools
     - future
     - {{ pin_compatible('numpy') }}
+    - pyfftw ==0.12
     - fftw
     - scipy <1.9.0
     - matplotlib-base
     - obspy
     - bottleneck
     - pyproj
-    - pyfftw
     - h5py
     - llvm-openmp >=4.0.1  # [osx]
 
