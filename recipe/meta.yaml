@@ -15,7 +15,7 @@ source:
 
 build:
   skip: true  # [win and py==38]
-  number: 0
+  number: 1
 
 
 requirements:
@@ -27,19 +27,20 @@ requirements:
     - future
     - numpy
     - fftw
+    - pyfftw ==0.12
     - llvm-openmp >=4.0.1  # [osx]
   run:
     - python
     - setuptools
     - future
     - {{ pin_compatible('numpy') }}
+    - pyfftw ==0.12
     - fftw
-    - scipy >=0.18, <1.9.0
+    - scipy <1.9.0
     - matplotlib-base
     - obspy
     - bottleneck
     - pyproj
-    - pyfftw
     - h5py
     - llvm-openmp >=4.0.1  # [osx]
 
