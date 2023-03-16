@@ -15,11 +15,15 @@ source:
 
 build:
   skip: true  # [win and py==38]
-  number: 2
+  number: 3
 
 
 requirements:
   build:
+    - python                                 # [build_platform != target_platform]
+    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
+    - cython                                 # [build_platform != target_platform]
+    - numpy                                  # [build_platform != target_platform]
     - {{ compiler('c') }}
   host:
     - python
