@@ -107,7 +107,7 @@ def check_c_locations():
     # Load the cdll
     cdll = libnames._load_cdll("libutils")
 
-      
+
 def test_obspy_resample():
     """ Check that obspy resample works - scipy hanning to hann name change. """
     tr = Trace(np.random.randn(360000))
