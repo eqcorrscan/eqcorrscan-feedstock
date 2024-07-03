@@ -15,7 +15,7 @@ source:
 
 build:
   skip: true  # [win and py==38]
-  number: 0
+  number: 1
 
 
 requirements:
@@ -25,6 +25,7 @@ requirements:
     - cython                                 # [build_platform != target_platform]
     - numpy                                  # [build_platform != target_platform]
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
   host:
     - python
     - setuptools
@@ -36,7 +37,6 @@ requirements:
     - python
     - setuptools
     - future
-    - {{ pin_compatible('numpy') }}
     - fftw
     - scipy
     - matplotlib-base
