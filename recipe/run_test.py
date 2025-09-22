@@ -2,6 +2,7 @@ import numpy as np
 import time
 import os
 import glob
+import importlib.machinery
 
 from obspy import Trace, Stream
 
@@ -92,14 +93,26 @@ def check_c_locations():
     lib_files = glob.glob(os.path.join(libdir, "*"))
     print(f"Found the following files in the Library: {lib_files}")
 
-    libname = libnames._get_lib_name("libutils")
-    libpath = os.path.join(libdir, libname)
     static_fftw = os.path.join(libdir, 'libfftw3-3.dll')
     static_fftwf = os.path.join(libdir, 'libfftw3f-3.dll')
-    print(f"Expected libutils here: {libpath}")
     print(f"Expected static fftw here: {static_fftw}")
     print(f"Expected static fftwf here: {static_fftwf}")
 
+    for ext in importlib.machinery.EXTENSION_SUFFIXES:
+        libname = "libutils" + ext
+        libpath = os.path.join(libdir, libname)
+
+        print(f"Looking for libutils here: {libpath}")
+
+    # Load the cdll
+    cdll = libnames._load_cdll("libutils")
+
+
+def test_obspy_resample():
+    """ Check that obspy resample works - scipy hanning to hann name change. """
+    tr = Trace(np.random.randn(360000))
+    tr.resample(50)
+    
 
 if __name__ == '__main__':
     """
@@ -107,3 +120,4 @@ if __name__ == '__main__':
     """
     check_c_locations()
     test_multi_channel_xcorr()
+    test_obspy_resample()

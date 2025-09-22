@@ -1,26 +1,31 @@
-{% set name = "EQcorrscan" %}
-{% set version = "0.4.3" %}
-{% set sha256 = "f8d783bdce30f0f40942fadc7a78f66434332f7a1347c0c2ffc50345a27bd607" %}
+{% set name = "eqcorrscan" %}
+{% set version = "0.5.1" %}
+{% set sha256 = "38f06e29d673473150906d10bfc219a6dc406405259b0f9606dc08b16fd71580" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: {{ sha256 }}
-  # fn: 0.4.3rc0.tar.gz
-  # url: https://github.com/eqcorrscan/EQcorrscan/archive/0.4.3rc0.tar.gz
+      fn: {{ name }}-{{ version }}.tar.gz
+      url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+      sha256: {{ sha256 }}
+#     fn: 0.5.0rc0.tar.gz
+#     url: https://github.com/eqcorrscan/EQcorrscan/archive/0.5.0rc0.tar.gz
 
 build:
   skip: true  # [win and py==38]
-  number: 3
+  number: 2
 
 
 requirements:
   build:
+    - python                                 # [build_platform != target_platform]
+    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
+    - cython                                 # [build_platform != target_platform]
+    - numpy                                  # [build_platform != target_platform]
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
   host:
     - python
     - setuptools
@@ -32,14 +37,12 @@ requirements:
     - python
     - setuptools
     - future
-    - {{ pin_compatible('numpy') }}
     - fftw
     - scipy
     - matplotlib-base
     - obspy
     - bottleneck
     - pyproj
-    - pyfftw
     - h5py
     - llvm-openmp >=4.0.1  # [osx]
 
